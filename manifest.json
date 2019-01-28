@@ -1,0 +1,36 @@
+{
+  "manifest_version": 1,
+  "name": "Amazing Quora",
+  "short_name": "My Quora",
+  "version": "1.0.0.2",
+  "description": "Redefines quora experience by abstracting sponsored advertisements etc.Shows upvotes for unopened answers and provides focus mode.",
+  "permissions": ["activeTab", "tabs","declarativeContent", "storage","contextMenus","identity"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.quora.com/*"],
+      "js": ["contentScript.js","js/jquery.js","js/bootstrap.min.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "page_action": {
+    "default_title": "Amazing quora",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/quora.png",
+      "32": "images/quora.png",
+      "48": "images/quora.png",
+      "128": "images/quora.png"
+    }
+  },
+  "icons": {
+    "16": "images/quora.png",
+    "32": "images/quora.png",
+    "48": "images/quora.png",
+    "128": "images/quora.png"
+  },
+  "manifest_version": 2
+}
